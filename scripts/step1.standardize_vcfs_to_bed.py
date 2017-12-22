@@ -2008,6 +2008,8 @@ def main():
 	callers_list=chr_list_readin(args.caller_names)
 	file_initiate(fileout,['CHR','POS','END','SVTYPE','GT','CALLER','SAMPLE'])
 	file_initiate(statout)
+	global ppre
+	ppre=args.input_path
 	[illumina_info_hash,illumina_stat_hash]=[{},{}]
 	for chromo in chrom_list:
 		for caller_name in callers_list:
