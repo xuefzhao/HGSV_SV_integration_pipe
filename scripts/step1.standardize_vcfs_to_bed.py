@@ -2000,6 +2000,7 @@ def main():
 	parser.add_argument('reference', help='reference genome used for bam alignment')
 	parser.add_argument('caller_names', help='file containing names of algorithms to be standardized')
 	parser.add_argument('contig_names', help='file containing names of contigs to be standardized')
+	args = parser.parse_args()
 	fileout=args.output_file
 	statout=fileout.replace('.bed','.num_svs.stat')
 	#eg: callers='dCGH,GenomeSTRiP,Manta,Pindel,VH,delly,liWGS,MELT,retroCNV,wham,ForestSV,lumpy,novobreak,Tardis'
