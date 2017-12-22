@@ -1,0 +1,3 @@
+python scripts/step1.standardize_vcfs_to_bed.py vcfinputs/ bedinputs/STEP0_ILL_Calls_all.bed ./refs/GRCh38_full_analysis_set_plus_decoy_hla.fa ./refs/callers.txt ./refs/contig.txt 
+python scripts/step2.integrate_ILL_svs.py bedinputs/ ./refs/GRCh38_full_analysis_set_plus_decoy_hla.fa refs/human.hg38.excl.tsv 
+
