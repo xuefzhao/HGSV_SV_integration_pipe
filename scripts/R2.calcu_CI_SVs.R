@@ -3,7 +3,7 @@
 args = commandArgs(trailingOnly=TRUE)
 
 ppre=paste(args[1],'/',sep='')
-data_file=paste(ppre,'Step1_bp_off_ILL_vs_PB_both_end_separate_RC50.txt',sep='')
+data_file=paste(ppre,'STEP1_bp_off_ILL_vs_PB_both_end_separate_RC50.txt',sep='')
 
 data=read.table(data_file)
 #par(mfrow=c(3,5))
