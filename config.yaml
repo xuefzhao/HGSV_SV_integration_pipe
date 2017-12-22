@@ -1,15 +1,13 @@
-callers: ./ref/caller_name.list
+# input
+input_path: vcfinputs/
 
-input_vcfs: ./vcfinputs/
+# output
+output_path: bedinputs/
+output_file: bedinputs/STEP0_ILL_Calls_all.bed 
 
-sources::
-	- delly
-	- lumpy
-	- manta
-	- pindel
-	- MELT
-	- SVelter
-	- Wham
-	- GenomeSTRiP
-	- dCGH
-	- 
+#refs
+reference: ./refs/GRCh38_full_analysis_set_plus_decoy_hla.fa
+callers: ./refs/callers.txt 
+contigs: ./refs/contig.txt 
+blacklist: ./refs/human.hg38.excl.tsv 
+
