@@ -1,3 +1,46 @@
-python scripts/step1.standardize_vcfs_to_bed.py vcfinputs/ bedinputs/STEP0_ILL_Calls_all.bed ./refs/GRCh38_full_analysis_set_plus_decoy_hla.fa ./refs/callers.txt ./refs/contig.txt 
-python scripts/step2.integrate_ILL_svs.py bedinputs/ ./refs/GRCh38_full_analysis_set_plus_decoy_hla.fa refs/human.hg38.excl.tsv 
 
+input_path=config['input_path']
+output_path=config['output_path']
+output_bed=config['output_file']
+
+
+rule step1:
+	input:
+		path=input_path
+	output:
+		bed=output_bed
+	shell:
+		"""
+		python {config[script1]} \
+			input.path \
+			output.bed \
+			{config[reference]} \
+			{config[callers]} \
+			{config[contigs]}	
+		"""
+
+rule step2:
+	input:
+		path=output_path
+	shell:
+		"""
+		python {config[script2]} \
+			input.path \
+			{config[reference]} \
+			{config[blacklist]}
+		"""
+
+rule step3:
+	input:
+		path=output_path
+	shell:
+		"""
+		python {config[script3]} \
+			input.path
+		"""
+
+rule cleanup:
+	shell:
+		"""
+		rm legend.consensus_bp_off_illumina_vs_pacbio_both_end_separate_based_on_RC50.png
+		"""
