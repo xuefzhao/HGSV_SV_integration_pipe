@@ -1,0 +1,15 @@
+callers: ./ref/caller_name.list
+
+input_vcfs: ./vcfinputs/
+
+sources::
+	- delly
+	- lumpy
+	- manta
+	- pindel
+	- MELT
+	- SVelter
+	- Wham
+	- GenomeSTRiP
+	- dCGH
+	- 

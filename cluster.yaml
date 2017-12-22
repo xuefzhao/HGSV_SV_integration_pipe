@@ -1,0 +1,6 @@
+__default__:
+    queue: short
+    log: "logs/{rule}.{wildcards}.out"
+    jobname: "{rule}.{wildcards}"
+    flags: "-R rusage[mem=4000]"
+
