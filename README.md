@@ -20,6 +20,7 @@ optional arguments:
 #  Integrate SVs from each algorithm into a non-redundant SV discovery set
 ### Script: ./scripts/step2.integrate_ILL_svs.py 
 ### usage:
+```
 step2.integrate_ILL_svs.py
 
 positional arguments:
